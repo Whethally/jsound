@@ -1,0 +1,38 @@
+.layout {
+  min-height: 100vh;
+}
+
+.sider {
+  padding-top: 26px;
+  border-radius: 0 20px 20px 0;
+}
+
+.main {
+  padding: 30px 40px;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.logoIcon {
+  display: flex;
+  justify-content: center;
+  font-size: 73px;
+  margin-bottom: 2rem;
+}
+
+.list {
+  margin: 0 1rem 1rem 1rem;
+}
+
+.collapseButton {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+}
