@@ -18,12 +18,10 @@ const AppRouter = ({ routes }: AppRouterProps) => {
         path='*'
         element={
           <Result
-            status='404'
-            title='404'
-            subTitle='Sorry, the page you visited does not exist.'
+            title='Страница не найдена'
             extra={
               <Button type='primary' onClick={() => navigate('/')}>
-                Back Home
+                Перейти на главную
               </Button>
             }
           />

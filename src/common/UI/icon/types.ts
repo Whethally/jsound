@@ -1,6 +1,17 @@
 import { IconComponentProps } from '@ant-design/icons/es/components/Icon';
 
-export type IIconType = 'access';
+export type IIconType =
+  | 'accompaniment'
+  | 'drums'
+  | 'eguitar'
+  | 'guitar'
+  | 'logo'
+  | 'mark'
+  | 'microphone'
+  | 'synth'
+  | 'telegram'
+  | 'vk'
+  | 'whatsapp';
 type AntIconProps = Pick<IconComponentProps, 'className' | 'style' | 'rotate' | 'title' | 'key' | 'id' | 'spin'> &
   React.RefAttributes<HTMLSpanElement>; // todo: убрать style и перенести стили во всех экземплярах в классы
 

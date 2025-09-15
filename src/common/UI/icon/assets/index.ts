@@ -1,1 +1,11 @@
-export { default as AccessIcon } from './svg/Access.svg?react';
+export { default as AccompanimentIcon } from './svg/Accompaniment.svg?react';
+export { default as DrumsIcon } from './svg/Drums.svg?react';
+export { default as EGuitarIcon } from './svg/EGuitar.svg?react';
+export { default as GuitarIcon } from './svg/Guitar.svg?react';
+export { default as LogoIcon } from './svg/Logo.svg?react';
+export { default as MarkIcon } from './svg/Mark.svg?react';
+export { default as MicrophoneIcon } from './svg/Microphone.svg?react';
+export { default as SynthIcon } from './svg/Synth.svg?react';
+export { default as TelegramIcon } from './svg/Telegram.svg?react';
+export { default as VkIcon } from './svg/Vk.svg?react';
+export { default as WhatsAppIcon } from './svg/WhatsApp.svg?react';
