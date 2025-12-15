@@ -1,0 +1,173 @@
+/* Reviews section styles migrated from hero.module.scss */
+
+.reviewsSection {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.reviewsTitle {
+  color: #ff1b6d !important;
+  font-weight: 800 !important;
+  font-size: 48px !important;
+  margin-bottom: 40px !important;
+}
+
+.reviewsCarousel {
+  .slick-track {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .slick-slide {
+    height: inherit;
+
+    > div {
+      height: 100%;
+    }
+  }
+}
+
+.reviewSlide {
+  height: 100%;
+  padding: 0 4px;
+
+  > div {
+    height: 100%;
+  }
+}
+
+.reviewCard {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+
+  @media (max-width: 768px) {
+    min-height: 650px;
+  }
+}
+
+.reviewContent {
+  align-items: flex-start;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+.reviewPhotoContainer {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+  }
+}
+
+.reviewPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.reviewText {
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #333 !important;
+  font-style: italic;
+  font-weight: 500;
+  position: relative;
+
+  @media (max-width: 768px) {
+    font-size: 18px !important;
+  }
+}
+
+.reviewName {
+  font-size: 18px !important;
+  color: #333 !important;
+  display: block;
+  font-weight: 600 !important;
+}
+
+.reviewDirection {
+  font-size: 16px !important;
+  color: #666 !important;
+}
+
+.reviewNavigation {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .ant-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background: #ff1b6d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #e61861;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 27, 109, 0.3);
+    }
+
+    .anticon {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding: 60px 0;
+  }
+
+  .reviewText {
+    font-size: 16px !important;
+  }
+
+  .reviewName {
+    font-size: 16px !important;
+  }
+
+  .reviewDirection {
+    font-size: 14px !important;
+  }
+}

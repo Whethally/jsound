@@ -1,8 +1,11 @@
 export const headerPaths = {
+  hero: '/hero',
   about: '/about',
-  education: '/education',
-  location: '/location',
-  teachers: '/teachers',
+  methods: '/methods',
+  directions: '/directions',
+  prices: '/prices',
+  team: '/team',
   reviews: '/reviews',
+  gallery: '/gallery',
   faq: '/faq'
 } as const;

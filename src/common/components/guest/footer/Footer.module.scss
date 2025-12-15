@@ -1,4 +1,194 @@
 .footer {
-  margin: 0 5rem;
-  border-radius: 2rem;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  min-height: 500px;
+}
+
+.mapBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+
+  .mapImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.footerContent {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 48px 60px;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.contactInfo {
+  background: transparent;
+}
+
+.contactLabel {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+  }
+}
+
+.contactValue {
+  font-size: 16px !important;
+  color: #666 !important;
+  font-weight: 400 !important;
+
+  @media (max-width: 768px) {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+  }
+}
+
+.socialButtons {
+  margin-top: 0;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.socialButton {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  background: #ff1b6d !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  @media (max-width: 768px) {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+  }
+
+  &:hover {
+    background: #e61861 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 27, 109, 0.3);
+  }
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+
+.footerLogo {
+  max-width: 380px;
+  height: auto;
+  filter: grayscale(100%) opacity(0.8);
+
+  @media (max-width: 768px) {
+    max-width: 240px;
+  }
+}
+
+.footerBottom {
+  position: relative;
+  background: rgba(68, 68, 68, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 24px 60px;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 20px;
+
+  @media (max-width: 768px) {
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 16px;
+  }
+}
+
+.companyName {
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+
+  @media (max-width: 768px) {
+    font-size: 14px !important;
+  }
+}
+
+.companyInn {
+  color: #ccc !important;
+  font-size: 14px !important;
+
+  @media (max-width: 768px) {
+    font-size: 13px !important;
+  }
+}
+
+.agreement {
+  color: #fff !important;
+  font-size: 16px !important;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: right;
+
+  &:hover {
+    color: #ff1b6d !important;
+  }
+
+  @media (max-width: 768px) {
+    text-align: left;
+    margin-top: 16px;
+    font-size: 14px !important;
+  }
 }

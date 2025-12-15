@@ -1,8 +1,10 @@
 export const headerLabels = {
   about: 'О нас',
-  education: 'Обучение',
-  location: 'Местоположение',
-  teachers: 'Преподаватели',
+  methods: 'Обучение',
+  directions: 'Направление',
+  prices: 'Цены',
+  team: 'Преподователи',
   reviews: 'Отзывы',
+  gallery: 'Фото',
   faq: 'F.A.Q'
 };

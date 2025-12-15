@@ -1,0 +1,91 @@
+/* About section styles migrated from hero.module.scss */
+
+.mainTitle {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  color: #ea2271;
+}
+
+.aboutImages {
+  position: relative;
+  margin-top: 24px;
+  width: 100%;
+  height: clamp(200px, 38vw, 430px);
+  margin-bottom: 8rem;
+}
+
+.aboutImage {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.aboutImageOne {
+  inset: 0 auto auto 0;
+  width: 60%;
+  height: 100%;
+  background-image: url('/About/Image_1.png');
+}
+
+.aboutImageTwo {
+  inset: auto 0 0 auto;
+  width: 58%;
+  height: 85%;
+  transform: translateY(30%);
+  background-image: url('/About/Image_2.jpg');
+}
+
+@media (max-width: 992px) {
+  .aboutImages {
+    height: clamp(220px, 50vw, 400px);
+  }
+  .aboutImageOne {
+    width: 70%;
+  }
+  .aboutImageTwo {
+    width: 65%;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutImages {
+    position: relative;
+    height: auto;
+    margin-bottom: 60px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  .aboutImageOne {
+    position: relative;
+    width: calc(100% - 20px);
+    height: auto;
+    aspect-ratio: 16 / 13;
+    transform: none;
+    inset: unset;
+    margin-left: 0;
+    margin-right: 20px;
+    margin-bottom: -40px;
+    border-radius: 0 20px 20px 0;
+    z-index: 1;
+  }
+
+  .aboutImageTwo {
+    position: relative;
+    width: calc(100% - 20px);
+    height: auto;
+    aspect-ratio: 16 / 13;
+    transform: none;
+    inset: unset;
+    margin-left: 20px;
+    margin-right: 0;
+    border-radius: 20px 0 0 20px;
+    z-index: 2;
+  }
+}

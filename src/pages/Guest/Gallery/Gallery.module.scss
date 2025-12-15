@@ -1,0 +1,92 @@
+/* Gallery section styles migrated from hero.module.scss */
+
+.gallerySection {
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+  }
+}
+
+.galleryTitle {
+  color: #ff1b6d !important;
+  text-align: center;
+}
+
+.gallerySubtitle {
+  font-size: 18px !important;
+  color: #666 !important;
+  text-align: center;
+  display: block;
+}
+
+.galleryGrid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  width: 100vw;
+  height: 100vh;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: auto;
+    gap: 0;
+    padding: 0;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.galleryItem {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 4 / 3;
+    height: auto;
+
+    /* Если последний элемент и нечетное количество - растянуть на всю ширину */
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      aspect-ratio: 9 / 3;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    z-index: 1;
+  }
+}

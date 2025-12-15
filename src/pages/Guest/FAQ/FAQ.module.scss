@@ -1,0 +1,91 @@
+/* FAQ section styles migrated from hero.module.scss */
+
+.faqSection {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faqTitle {
+  margin-bottom: 40px !important;
+  color: #ff1b6d !important;
+  font-weight: 700 !important;
+  font-size: 48px !important;
+}
+
+.faqCollapse {
+  background: transparent;
+
+  :global {
+    .ant-collapse-item {
+      border: none;
+      border-bottom: 2px solid #ff1b6d;
+      margin-bottom: 0;
+
+      &:last-child {
+        border-bottom: 2px solid #ff1b6d;
+        border-radius: 0;
+      }
+
+      .ant-collapse-header {
+        padding: 24px 0;
+        background: transparent;
+        border: none;
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
+
+        .ant-collapse-expand-icon {
+          position: absolute !important;
+          right: 0 !important;
+          color: #ff1b6d !important;
+          font-size: 24px !important;
+
+          .anticon {
+            color: #ff1b6d !important;
+            font-weight: bold !important;
+          }
+        }
+      }
+
+      .ant-collapse-header:hover {
+        background: transparent !important;
+      }
+
+      .ant-collapse-content {
+        border: none !important;
+        background: transparent !important;
+
+        .ant-collapse-content-box {
+          padding: 0 0 24px 0 !important;
+
+          p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 60px 20px;
+  }
+
+  .faqTitle {
+    font-size: 36px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .faqCollapse {
+    .ant-collapse-item {
+      .ant-collapse-header {
+        font-size: 16px !important;
+        padding: 20px 0 !important;
+      }
+    }
+  }
+}

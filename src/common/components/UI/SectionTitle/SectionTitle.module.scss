@@ -1,0 +1,60 @@
+/* Reusable SectionTitle styles */
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: 0%;
+  color: #ea2271;
+  margin: 0; /* neutral default */
+}
+
+/* Color variants */
+.variant-accent {
+  color: #ea2271;
+}
+
+.variant-light {
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.variant-dark {
+  color: #1f2937; /* gray-800 */
+}
+
+.size-m {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+.size-s {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.align-center {
+  text-align: center;
+  width: 100%;
+}
+
+.align-right {
+  text-align: right;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .size-m {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .size-s {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}

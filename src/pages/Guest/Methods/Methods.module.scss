@@ -1,0 +1,82 @@
+/* Methods section styles migrated from hero.module.scss */
+
+.methodsSection {
+  padding: 120px 0;
+  background: linear-gradient(115deg, #120a33 0%, #21185c 55%, #301a60 100%);
+  color: #fff;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/Team/Background.png') center/cover no-repeat;
+    opacity: 0.3;
+  }
+}
+
+.methodsHeader {
+  min-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.methodsTitleContainer {
+  width: 100%;
+}
+
+/* Title replaced by shared SectionTitle (variant light) */
+
+.methodsSubtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.2rem !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.methodsGrid {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.methodCard {
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  .methodContent {
+    @media (max-width: 768px) {
+      padding: 0 20px 24px;
+    }
+  }
+
+  .methodCardTitle {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    font-weight: 800;
+    color: #7c3aed;
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  .methodCardText {
+    color: #4b5563 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin: 0;
+    @media (max-width: 768px) {
+      font-size: 0.95rem !important;
+    }
+  }
+}

@@ -1,0 +1,249 @@
+/* Team section styles migrated from hero.module.scss */
+
+.teamSection {
+  padding: 100px 0;
+  background: linear-gradient(115deg, #120a33 0%, #21185c 55%, #301a60 100%);
+  color: #fff;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/Team/Background.png') center/cover no-repeat;
+    opacity: 0.5;
+  }
+}
+
+.teamHeader {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.teamTitleContainer {
+  width: 100%;
+  place-items: center;
+  gap: 40px;
+}
+
+.teamNavigation {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navButton {
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #333 !important;
+
+  &:hover {
+    background: white !important;
+    transform: scale(1.1);
+    color: #333 !important;
+  }
+
+  .anticon {
+    font-size: 20px;
+  }
+}
+
+.teamTitle {
+  margin: 0;
+  color: white !important;
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+}
+
+.teamSubtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0;
+}
+
+.teamCarousel {
+  position: relative;
+  z-index: 1;
+  padding: 0 40px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  .ant-carousel .ant-carousel-content {
+    height: auto;
+  }
+}
+
+.teamSlide {
+  padding: 0 8px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.teamCard {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 360px;
+  position: relative;
+
+  &:hover {
+    .teamImage {
+      transform: scale(1.05);
+    }
+
+    .teamOverlay {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.95) 100%);
+    }
+  }
+}
+
+.teamImageContainer {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+}
+
+.teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.teamOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+  color: white;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 120px;
+}
+
+.memberName {
+  color: white !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.roleTag {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .teamHeader {
+    max-width: 100%;
+    padding: 0 30px 50px;
+  }
+
+  .teamCarousel {
+    padding: 0 30px;
+  }
+
+  .teamTitleContainer {
+    gap: 24px;
+  }
+
+  .navButton {
+    width: 48px;
+    height: 48px;
+
+    .anticon {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 60px 0;
+  }
+
+  .teamHeader {
+    padding: 0 20px 30px;
+  }
+
+  .teamTitleContainer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .teamNavigation {
+    display: none;
+  }
+
+  .teamTitle {
+    font-size: 32px !important;
+  }
+
+  .teamSubtitle {
+    font-size: 16px;
+  }
+
+  .teamCarousel {
+    padding: 0;
+  }
+
+  .teamSlide {
+    padding: 0;
+  }
+
+  .teamCard {
+    height: 380px;
+    border-radius: 16px;
+  }
+
+  .teamImageContainer {
+    border-radius: 16px;
+  }
+
+  .memberName {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .teamOverlay {
+    padding: 20px;
+    min-height: 100px;
+  }
+
+  .roleTag {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+}
