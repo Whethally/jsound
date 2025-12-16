@@ -1,75 +1,49 @@
-import { Flex, Image, Typography, Row, Col } from 'antd';
+import { useMemo } from 'react';
+import { Flex, Image, Typography, Row, Col, Space } from 'antd';
 import styles from './Methods.module.scss';
 import { SectionTitle } from '@/common/components/UI/SectionTitle/SectionTitle';
 import Card from '@/common/components/UI/Card/Card';
+import { METHODS_CONTENT, METHODS_DATA, METHODS_GRID_GUTTER, METHOD_IMAGE_HEIGHT } from './constants';
 
 const { Text } = Typography;
 
-const Methods = () => (
-  <Flex vertical gap={20} className={styles.methodsSection}>
-    <Flex className={styles.methodsHeader}>
-      <Flex className={styles.methodsTitleContainer}>
-        <SectionTitle variant='light'>Методы обучения</SectionTitle>
-      </Flex>
-    </Flex>
+const Methods = () => {
+  const methodCards = useMemo(
+    () =>
+      METHODS_DATA.map((method) => (
+        <Col key={method.id} xs={24} md={12} style={{ padding: 0 }}>
+          <Card
+            cover={
+              <Image preview={false} src={method.image} alt={method.alt} height={METHOD_IMAGE_HEIGHT} className={styles.methodImage} />
+            }
+            cardHeaderProps={{
+              titleProps: {
+                title: method.title,
+                titleType: 'purple'
+              }
+            }}
+            cardContent={
+              <Space direction='vertical' size={24} className={styles.methodContent}>
+                <Text className={styles.methodCardText}>{method.text}</Text>
+              </Space>
+            }
+          />
+        </Col>
+      )),
+    []
+  );
 
-    <div className={styles.methodsGrid}>
-      <Row
-        gutter={[
-          { xs: 30, sm: 30, md: 40 },
-          { xs: 30, sm: 30, md: 40 }
-        ]}
-      >
-        {[
-          {
-            key: 'individual',
-            img: '/Method/Image_1.png',
-            alt: 'Индивидуальное обучение',
-            title: 'Индивидуальное обучение',
-            text: 'Индивидуальный подход к каждому ученику — это одно из основных требований к профессиональному обучению игре на музыкальных инструментах'
-          },
-          {
-            key: 'group',
-            img: '/Method/Image_2.png',
-            alt: 'Групповое обучение',
-            title: 'Групповое обучение',
-            text: 'Групповое обучение проходит по принципу «от общего к частному». В процессе обучения каждый из учеников имеет возможность проявить и реализовать свой талант, получить помощь и поддержку от других ребят.\n\nКаждый урок строится так, чтобы ученик мог усвоить максимальное количество информации за короткое время.'
-          }
-        ].map((m) => (
-          <Col key={m.key} xs={24} md={12}>
-            <Card
-              cover={
-                <Image
-                  preview={false}
-                  src={m.img}
-                  alt={m.alt}
-                  height={300}
-                  style={{
-                    objectFit: 'cover'
-                  }}
-                />
-              }
-              cardHeaderProps={{
-                titleProps: {
-                  title: m.title,
-                  titleType: 'purple'
-                }
-              }}
-              cardContent={
-                <Flex vertical gap={24}>
-                  <Flex vertical gap={24} className={styles.methodContent}>
-                    <Text className={styles.methodCardText} style={{ whiteSpace: 'pre-line' }}>
-                      {m.text}
-                    </Text>
-                  </Flex>
-                </Flex>
-              }
-            />
-          </Col>
-        ))}
-      </Row>
-    </div>
-  </Flex>
-);
+  return (
+    <Flex vertical gap={20} className={styles.methodsSection}>
+      <Flex className={styles.methodsHeader}>
+        <SectionTitle variant='light'>{METHODS_CONTENT.title}</SectionTitle>
+      </Flex>
+
+      <Space direction='vertical' className={styles.methodsGrid}>
+        <Row gutter={[METHODS_GRID_GUTTER.horizontal, METHODS_GRID_GUTTER.vertical]}>{methodCards}</Row>
+      </Space>
+    </Flex>
+  );
+};
 
 export default Methods;

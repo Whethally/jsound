@@ -1,3 +1,7 @@
+.full {
+  width: 100%;
+}
+
 .layout {
   margin: 0 auto;
   min-height: 100vh;
@@ -10,7 +14,6 @@
 }
 
 .content section:first-of-type {
-  /* компенсируем перекрытие фиксированным хедером визуально (фон перекрывается, но якоря корректны) */
   scroll-margin-top: 120px;
 }
 
@@ -18,17 +21,70 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 40px; /* горизонтальные поля */
+  padding: 0 40px;
   box-sizing: border-box;
+}
+
+.floatButton {
+  :global(.ant-float-btn-body) {
+    width: 280px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #0b3567 0%, #1a5fb4 100%) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(11, 53, 103, 0.3) !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      box-shadow: 0 6px 30px rgba(11, 53, 103, 0.5) !important;
+      transform: translateY(-2px) !important;
+    }
+  }
+
+  :global(.ant-float-btn-icon) {
+    font-size: 20px !important;
+  }
+
+  :global(.ant-float-btn-description) {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+  }
 }
 
 @media (max-width: 992px) {
   .container {
     padding: 0 24px;
   }
+
+  .floatButton {
+    :global(.ant-float-btn-body) {
+      width: 200px !important;
+      height: 56px !important;
+    }
+
+    :global(.ant-float-btn-description) {
+      font-size: 12px !important;
+    }
+  }
 }
+
 @media (max-width: 576px) {
   .container {
     padding: 0 20px;
+  }
+
+  .floatButton {
+    :global(.ant-float-btn-body) {
+      width: 160px !important;
+      height: 52px !important;
+    }
+
+    :global(.ant-float-btn-icon) {
+      font-size: 16px !important;
+    }
+
+    :global(.ant-float-btn-description) {
+      font-size: 10px !important;
+    }
   }
 }

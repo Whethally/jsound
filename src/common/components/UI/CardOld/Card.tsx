@@ -16,7 +16,6 @@ export type BaseCardProps = {
   align?: 'left' | 'center' | 'right';
   clickable?: boolean;
   disabled?: boolean;
-  /** Произвольный box-shadow. Если указан, перекроет тень из elevation */
   shadow?: string;
   title?: ReactNode;
   subtitle?: ReactNode;
@@ -73,11 +72,9 @@ export const Card = (props: CardProps): React.ReactElement => {
 
   const hasHeader = title || subtitle || headerExtra;
 
-  // Отдельно обрабатываем style, чтобы объединить с кастомной тенью
   const { style: styleProp, ...restWithoutStyle } = rest as { style?: React.CSSProperties } & typeof rest;
   const mergedStyle: React.CSSProperties | undefined = shadow ? { ...(styleProp || {}), boxShadow: shadow } : styleProp;
 
-  // Если указана кастомная тень, убираем классы elevation (иначе может конфликтовать визуально)
   const finalClassName = shadow
     ? classNames
         .split(' ')

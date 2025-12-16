@@ -11,14 +11,9 @@ export type SectionTitleProps = {
   align?: 'left' | 'center' | 'right';
   variant?: 'accent' | 'light' | 'dark';
   className?: string;
-  id?: string; // для навигации / якорей
+  id?: string;
 };
 
-/*
-  Reusable section title with consistent typography.
-  - size: visual size variant (l default matches original 48px, m ~40px, s ~32px)
-  - align: text alignment helper
-*/
 export const SectionTitle = ({ children, as = 'h2', size = 'l', align = 'left', variant = 'accent', className, id }: SectionTitleProps) => {
   type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   const isHeading = as.startsWith('h');
@@ -29,7 +24,6 @@ export const SectionTitle = ({ children, as = 'h2', size = 'l', align = 'left', 
   if (variant) classes.push(styles[`variant-${variant}`]);
   if (className) classes.push(className);
 
-  // Using Text to keep Ant typography styling; consumers can wrap if semantic h tag required elsewhere.
   return (
     <Text
       id={id}

@@ -1,4 +1,17 @@
-/* Directions section styles migrated from hero.module.scss (mainTitle replaced by shared SectionTitle) */
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.directionDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+}
 
 .directionCard {
   background: #ffffff;
@@ -26,4 +39,24 @@
   color: #fff;
   font-size: 34px;
   box-shadow: 0 6px 16px -4px rgba(255, 39, 120, 0.5);
+}
+
+.directionContainer {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.blur1 {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+}
+
+.blur1 {
+  right: 175px;
+  top: -206px;
 }

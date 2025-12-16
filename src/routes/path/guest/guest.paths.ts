@@ -1,5 +1,7 @@
 import { headerPaths } from './header';
+import { legalPaths } from './legal';
 
 export const guestPaths = {
-  ...headerPaths
+  ...headerPaths,
+  ...legalPaths
 } as const;

@@ -1,29 +1,32 @@
-/* Reviews section styles migrated from hero.module.scss */
-
 .reviewsSection {
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .reviewsTitle {
-  color: #ff1b6d !important;
-  font-weight: 800 !important;
-  font-size: 48px !important;
-  margin-bottom: 40px !important;
+  color: #ff1b6d;
+  font-weight: 800;
+  font-size: 48px;
+  margin-bottom: 40px;
 }
 
 .reviewsCarousel {
   .slick-track {
     display: flex;
     align-items: stretch;
+    height: 100%;
   }
 
   .slick-slide {
-    height: inherit;
+    height: 100%;
 
     > div {
       height: 100%;
     }
+  }
+
+  .slick-list {
+    height: 100%;
   }
 }
 
@@ -91,28 +94,28 @@
 }
 
 .reviewText {
-  font-size: 20px !important;
-  line-height: 1.6 !important;
-  color: #333 !important;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
   font-style: italic;
   font-weight: 500;
   position: relative;
 
   @media (max-width: 768px) {
-    font-size: 18px !important;
+    font-size: 18px;
   }
 }
 
 .reviewName {
-  font-size: 18px !important;
-  color: #333 !important;
+  font-size: 18px;
+  color: #333;
   display: block;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 .reviewDirection {
-  font-size: 16px !important;
-  color: #666 !important;
+  font-size: 16px;
+  color: #666;
 }
 
 .reviewNavigation {
@@ -160,14 +163,40 @@
   }
 
   .reviewText {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 
   .reviewName {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 
   .reviewDirection {
-    font-size: 14px !important;
+    font-size: 14px;
   }
+}
+
+.reviewContainer {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.blur1,
+.vector1 {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+}
+
+.blur1 {
+  right: 0;
+  top: -159px;
+}
+
+.vector1 {
+  right: 0;
+  top: -370px;
 }

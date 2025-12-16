@@ -23,13 +23,16 @@ export const useSignupForm = ({ onSuccess, form: externalForm }: UseSignupFormOp
   const sendEmail = async (values: FormValues) => {
     setLoading(true);
     try {
+      const sanitizedName = values.user_name.trim().replace(/[<>{}[\]\\/'"`;()$]/g, '');
+      const sanitizedPhone = values.user_phone.replace(/[^\d+\s()-]/g, '');
+
       await emailjs.send(
         'service_4fns2zc',
         'template_1aga0wv',
         {
-          user_name: values.user_name,
-          user_phone: values.user_phone || 'Не указан',
-          reply_to: values.user_phone || values.user_email || 'no-reply@example.com'
+          user_name: sanitizedName,
+          user_phone: sanitizedPhone || 'Не указан',
+          reply_to: sanitizedPhone || values.user_email || 'no-reply@example.com'
         },
         'EDZTIdTtZ9V675KTn'
       );

@@ -1,5 +1,3 @@
-/* Team section styles migrated from hero.module.scss */
-
 .teamSection {
   padding: 100px 0;
   background: linear-gradient(115deg, #120a33 0%, #21185c 55%, #301a60 100%);
@@ -42,15 +40,15 @@
 .navButton {
   width: 46px;
   height: 46px;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: none !important;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  color: #333 !important;
+  color: #333;
 
   &:hover {
-    background: white !important;
+    background: white;
     transform: scale(1.1);
-    color: #333 !important;
+    color: #333;
   }
 
   .anticon {
@@ -60,14 +58,14 @@
 
 .teamTitle {
   margin: 0;
-  color: white !important;
-  font-size: 48px !important;
-  font-weight: 700 !important;
-  margin-bottom: 16px !important;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .teamSubtitle {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   max-width: 600px;
   margin: 0;
@@ -76,7 +74,7 @@
 .teamCarousel {
   position: relative;
   z-index: 1;
-  padding: 0 40px;
+  padding: 0;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -88,7 +86,7 @@
 }
 
 .teamSlide {
-  padding: 0 8px;
+  padding: 0;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -142,10 +140,10 @@
 }
 
 .memberName {
-  color: white !important;
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  margin-bottom: 12px !important;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
   line-height: 1.3;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -162,7 +160,6 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .teamHeader {
     max-width: 100%;
@@ -204,11 +201,11 @@
   }
 
   .teamNavigation {
-    display: none;
+    gap: 12px;
   }
 
   .teamTitle {
-    font-size: 32px !important;
+    font-size: 32px;
   }
 
   .teamSubtitle {
@@ -233,8 +230,8 @@
   }
 
   .memberName {
-    font-size: 18px !important;
-    margin-bottom: 8px !important;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   .teamOverlay {

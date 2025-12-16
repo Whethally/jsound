@@ -1,105 +1,61 @@
-import { Col, Flex, Row, Typography } from 'antd';
-import './Directions.module.scss';
-import { IIconType } from '@/common/UI/icon';
+import { useMemo } from 'react';
+import { Col, Flex, Grid, Row, Typography } from 'antd';
+import styles from './Directions.module.scss';
 import { SectionTitle } from '@/common/components/UI/SectionTitle/SectionTitle';
 import Card from '@/common/components/UI/Card/Card';
+import { DIRECTIONS_CONTENT, DIRECTIONS_DATA, DIRECTIONS_GRID_GUTTER } from './constants';
 
 const { Text } = Typography;
+const { useBreakpoint } = Grid;
 
-// Направления (иконки и описания)
-const directionCards: { icon: IIconType; title: string; desc: string; color: string[] }[] = [
-  {
-    icon: 'microphone',
-    title: 'Вокал',
-    desc: 'Индивидуальные и групповые уроки вокала для детей и взрослых. Поможем развить голос, дыхание и уверенность на сцене.',
-    color: ['#FF72AA', '#FF0065']
-  },
-  {
-    icon: 'guitar',
-    title: 'Гитара',
-    desc: 'Обучение игре на акустической гитаре с нуля и для продолжающих. Осваивайте аккорды, ритмы и техники исполнения.',
-    color: ['#C0AAFF', '#9000FF']
-  },
-  {
-    icon: 'eguitar',
-    title: 'Электрогитара/Бас-гитара',
-    desc: 'Современные методы игры на электрогитаре и бас-гитаре, развитие техники и музыкального слуха для всех уровней.',
-    color: ['#729AFF', '#0022FF']
-  },
-  {
-    icon: 'accompaniment',
-    title: 'Аккомпанемент',
-    desc: 'Индивидуальные и групповые уроки вокала для детей и взрослых. Поможем развить голос, дыхание и уверенность на сцене.',
-    color: ['#A1F4AD', '#53EA0E']
-  },
-  {
-    icon: 'drums',
-    title: 'Барабаны',
-    desc: 'Уроки игры на ударных инструментах, развитие чувства ритма, координации и техники исполнения.',
-    color: ['#72FFE3', '#00BBFF']
-  },
-  {
-    icon: 'synth',
-    title: 'Синтезатор',
-    desc: 'Обучение игре на синтезаторе и клавишных, освоение основ музыкальной теории и импровизации.',
-    color: ['#FFE372', '#FF8000']
-  }
-];
+const Directions = () => {
+  const screens = useBreakpoint();
+  const isMobile = !screens.lg;
 
-const Directions = () => (
-  <Flex vertical gap={32}>
-    <Flex vertical gap={16}>
-      <SectionTitle>Наши направления</SectionTitle>
-      <Text
-        style={{
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px ',
-          letterSpacing: '0%'
-        }}
-      >
-        Уроки вокала, гитары, ударных и синтезатора в Уфе — музыкальная школа
-      </Text>
-    </Flex>
-
-    <Row gutter={[24, 24]}>
-      {directionCards.map((card) => (
-        <Col key={card.title} xl={8} md={12} xs={24}>
+  const directionCards = useMemo(
+    () =>
+      DIRECTIONS_DATA.map((direction) => (
+        <Col key={direction.id} xl={8} md={12} xs={24}>
           <Card
             cardBorder
             cardShadow
             cardPadding='40px 24px'
             cardHeaderProps={{
               titleProps: {
-                title: card.title,
+                title: direction.title,
                 titleType: 'default'
               },
               suffixProps: {
-                suffixIcon: card.icon,
+                suffixIcon: direction.icon,
                 suffixType: 'coloredSuffix',
-                background: `linear-gradient(140deg, ${card.color[0]} 6.37%, ${card.color[1]} 100%)`
+                background: `linear-gradient(140deg, ${direction.gradient[0]} 6.37%, ${direction.gradient[1]} 100%)`
               }
             }}
             cardGap={10}
-            cardContent={
-              <Flex vertical gap={12} style={{ height: '100%', alignItems: 'center', textAlign: 'center' }}>
-                <Text
-                  style={{
-                    fontWeight: 400,
-                    fontSize: '16px',
-                    lineHeight: '24px',
-                    letterSpacing: '0%'
-                  }}
-                >
-                  {card.desc}
-                </Text>
-              </Flex>
-            }
+            cardContent={<Text className={styles.directionDescription}>{direction.description}</Text>}
           />
         </Col>
-      ))}
-    </Row>
-  </Flex>
-);
+      )),
+    []
+  );
+
+  return (
+    <div className={styles.directionContainer}>
+      {!isMobile && (
+        <>
+          <img src='/Direction/Blur_1.svg' alt='' className={styles.blur1} aria-hidden='true' />
+        </>
+      )}
+      <Flex vertical gap={32}>
+        <Flex vertical gap={16}>
+          <SectionTitle>{DIRECTIONS_CONTENT.title}</SectionTitle>
+          <Text className={styles.subtitle}>{DIRECTIONS_CONTENT.subtitle}</Text>
+        </Flex>
+
+        <Row gutter={[DIRECTIONS_GRID_GUTTER.horizontal, DIRECTIONS_GRID_GUTTER.vertical]}>{directionCards}</Row>
+      </Flex>
+    </div>
+  );
+};
 
 export default Directions;

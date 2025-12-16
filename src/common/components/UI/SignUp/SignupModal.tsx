@@ -3,6 +3,7 @@ import styles from './SignupModal.module.scss';
 import Title from 'antd/es/typography/Title';
 import Link from 'antd/es/typography/Link';
 import { SignupForm } from './Form/SignupForm';
+import { SIGNUP_MODAL_CONTENT } from './constants';
 
 const { Text } = Typography;
 
@@ -11,28 +12,25 @@ type SignupModalProps = {
   onClose: () => void;
 };
 
-// Reusable модальный компонент с формой записи
 const SignupModal = ({ visible, onClose }: SignupModalProps) => {
   return (
-    <>
-      <Modal visible={visible} onCancel={onClose} footer={null} centered width={600} className={styles.modal} destroyOnClose>
-        <Image src='JSOUND.png' preview={false} alt='J-Sound Студия творческого развития' />
-        <Flex vertical gap={16}>
-          <Flex vertical justify='center' align='center'>
-            <Title>Бесплатный урок</Title>
-            <Text style={{ textAlign: 'center' }}>Заполните форму ниже и мы свяжемся с вами в течение 24 часов</Text>
-          </Flex>
-          <SignupForm onSuccess={onClose} buttonText='Отправить' />
-
-          <Text style={{ textAlign: 'center' }}>
-            Отправляя данные обращение Вы подтверждаете, что ознакомлены и согласны с{' '}
-            <Link href='/privacy' target='_blank' rel='noopener noreferrer'>
-              условиями обработки данных
-            </Link>
-          </Text>
+    <Modal visible={visible} onCancel={onClose} footer={null} centered width={600} className={styles.modal} destroyOnClose>
+      <Image src={SIGNUP_MODAL_CONTENT.logo.src} preview={false} alt={SIGNUP_MODAL_CONTENT.logo.alt} />
+      <Flex vertical gap={16}>
+        <Flex vertical justify='center' align='center'>
+          <Title>{SIGNUP_MODAL_CONTENT.title}</Title>
+          <Text className={styles.subtitle}>{SIGNUP_MODAL_CONTENT.subtitle}</Text>
         </Flex>
-      </Modal>
-    </>
+        <SignupForm onSuccess={onClose} buttonText={SIGNUP_MODAL_CONTENT.buttonText} />
+
+        <Text className={styles.privacyText}>
+          {SIGNUP_MODAL_CONTENT.privacyText}{' '}
+          <Link href={SIGNUP_MODAL_CONTENT.privacyLinkHref} target='_blank' rel='noopener noreferrer'>
+            {SIGNUP_MODAL_CONTENT.privacyLinkText}
+          </Link>
+        </Text>
+      </Flex>
+    </Modal>
   );
 };
 

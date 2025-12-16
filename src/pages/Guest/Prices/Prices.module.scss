@@ -1,8 +1,8 @@
 .pageTitle {
-  font-size: 48px !important;
-  font-weight: 700 !important;
-  color: #e91e63 !important;
-  margin-bottom: 8px !important;
+  font-size: 48px;
+  font-weight: 700;
+  color: #e91e63;
+  margin-bottom: 8px;
 }
 
 .pageSubtitle {
@@ -12,69 +12,42 @@
 }
 
 .pricesContent {
+  display: flex;
+  gap: 40px;
   align-items: flex-start;
 
   @media (max-width: 768px) {
     width: 100%;
+    flex-direction: column;
   }
-}
-
-/* Фильтр направлений */
-.directionsFilter {
-  background: #fff;
-  border-radius: 12px;
 }
 
 .directionsMenu {
-  border: none !important;
-  background: transparent !important;
+  border: none;
+  background: #fff;
+  border-radius: 12px;
 
-  .ant-menu-item {
-    height: 60px !important;
-    line-height: 60px !important;
+  :global(.ant-menu-item) {
+    height: 60px;
+    line-height: 60px;
     font-size: 16px;
     font-weight: 500;
-    margin: 0 !important;
-    padding: 0 24px !important;
-    border-radius: 0 !important;
+    margin: 0;
+    padding: 0 24px;
+    border-radius: 0;
 
     &:hover {
-      background: #e3f2fd !important;
+      background: #e3f2fd;
     }
   }
 }
-.activeMenuItem {
-  background: #ffe8f5 !important;
-  color: #3a3838 !important;
-}
 
-/* Слайдер контейнер */
-.sliderContainer {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-.mobileCardContainer {
-  display: none;
+.cardContent {
   width: 100%;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
 }
 
-.mobileDirectionsButtons {
-  display: none;
-
-  @media (max-width: 768px) {
-    display: flex;
-  }
+.packageWrapper {
+  width: 100%;
 }
 
 .directionsSlider {
@@ -82,10 +55,8 @@
   gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px;
   scroll-snap-type: x mandatory;
 
-  /* Скрыть полосу прокрутки */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -93,7 +64,6 @@
   scrollbar-width: none;
 }
 
-/* Карточки направлений */
 .directionCard {
   min-width: 400px;
   border-radius: 16px;
@@ -106,13 +76,12 @@
   }
 }
 
-/* Стилизация активной карточки теперь через глобальные классы Card (activeGradient etc.) */
 .directionCard[data-active='true'] {
   .directionTitle,
   .packageTitle,
   .priceRow span,
   .price {
-    color: #fff !important;
+    color: #fff;
   }
 }
 
@@ -135,7 +104,7 @@
 .directionTitle {
   margin: 0;
   font-size: 24px;
-  font-weight: 700 !important;
+  font-weight: 700;
 }
 
 .directionSubtitle {
@@ -168,7 +137,6 @@
   background: #ff0065;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .pricesPage {
     padding: 24px 16px;
@@ -180,19 +148,9 @@
   }
 
   .pageTitle {
-    font-size: 32px !important;
+    font-size: 32px;
   }
 
-  .directionsFilter {
-    min-width: 100%;
-    background: transparent;
-  }
-
-  .directionsMenu {
-    display: none;
-  }
-
-  /* Мобильные кнопки направлений */
   .mobileDirectionsButtons {
     display: flex;
     flex-direction: column;
@@ -202,38 +160,27 @@
   }
 
   .mobileDirectionButton {
-    width: 100% !important;
-    height: 56px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    border-radius: 12px !important;
-    background: #fff !important;
-    color: #333 !important;
-    border: 2px solid #f0f0f0 !important;
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 12px;
+    background: #fff;
+    color: #333;
+    border: 2px solid #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      border-color: #ff0065 !important;
+      border-color: #ff0065;
     }
   }
 
   .mobileDirectionButton.active {
-    background: #ea2271 !important;
-    color: #fff !important;
-    border: none !important;
-  }
-
-  /* Скрыть слайдер на мобильных */
-  .sliderContainer {
-    display: none;
-  }
-
-  /* Показать одну карточку на мобильных */
-  .mobileCardContainer {
-    display: block;
-    width: 100%;
+    background: #ea2271;
+    color: #fff;
+    border: none;
   }
 
   .directionCard {
@@ -242,7 +189,7 @@
   }
 
   .directionTitle {
-    font-size: 20px !important;
+    font-size: 20px;
   }
 
   .directionIcon {
@@ -259,4 +206,34 @@
     padding: 16px;
     gap: 16px;
   }
+}
+
+.priceContainer {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.blur1,
+.vector1,
+.vector2 {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+}
+
+.blur1 {
+  left: 0;
+}
+
+.vector1 {
+  bottom: -654px;
+}
+
+.vector2 {
+  right: 0;
+  bottom: -681px;
 }

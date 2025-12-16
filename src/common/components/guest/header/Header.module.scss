@@ -3,7 +3,100 @@
   top: 0;
   left: 0;
   width: 100%;
-  margin: 1rem;
   z-index: 1000;
   background: transparent;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.headerInner {
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  font-size: 5.5rem;
+  color: white;
+}
+
+.logoMobile {
+  font-size: 5rem;
+  color: white;
+}
+
+.desktopMenu {
+  background: transparent;
+  border: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.mobileMenu {
+  background: transparent;
+  border: none;
+}
+
+.menuLink {
+  color: white;
+  font-weight: 500;
+}
+
+.branchButton {
+  color: white;
+  border: 2px solid #ffffff40;
+  border-ra &:hover {
+    color: rgba(255, 255, 255);
+  }
+}
+
+.burgerButton {
+  font-size: 2rem;
+  padding: 8px;
+}
+
+.burgerIcon {
+  font-size: 2rem;
+  color: white;
+}
+
+.drawer {
+  :global(.ant-drawer-body) {
+    padding: 0;
+    background: linear-gradient(135deg, #0f0f2b, #1a1a3a);
+  }
+}
+
+.drawerContent {
+  padding: 1rem 24px;
+  color: white;
+  width: 100%;
+}
+
+.drawerHeader {
+  margin-bottom: 3rem;
+}
+
+.closeButton {
+  font-size: 2rem;
+  padding: 0;
+}
+
+.closeIcon {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.drawerBranch {
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: white;
+  padding: 0;
+  height: auto;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
 }

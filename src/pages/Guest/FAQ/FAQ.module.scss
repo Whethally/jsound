@@ -1,15 +1,14 @@
-/* FAQ section styles migrated from hero.module.scss */
-
 .faqSection {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 0 4rem 0;
 }
 
 .faqTitle {
-  margin-bottom: 40px !important;
-  color: #ff1b6d !important;
-  font-weight: 700 !important;
-  font-size: 48px !important;
+  margin-bottom: 40px;
+  color: #ff1b6d;
+  font-weight: 700;
+  font-size: 48px;
 }
 
 .faqCollapse {
@@ -35,28 +34,28 @@
         color: #333;
 
         .ant-collapse-expand-icon {
-          position: absolute !important;
-          right: 0 !important;
-          color: #ff1b6d !important;
-          font-size: 24px !important;
+          position: absolute;
+          right: 0;
+          color: #ff1b6d;
+          font-size: 24px;
 
           .anticon {
-            color: #ff1b6d !important;
-            font-weight: bold !important;
+            color: #ff1b6d;
+            font-weight: bold;
           }
         }
       }
 
       .ant-collapse-header:hover {
-        background: transparent !important;
+        background: transparent;
       }
 
       .ant-collapse-content {
-        border: none !important;
-        background: transparent !important;
+        border: none;
+        background: transparent;
 
         .ant-collapse-content-box {
-          padding: 0 0 24px 0 !important;
+          padding: 0 0 24px 0;
 
           p {
             margin: 0;
@@ -76,15 +75,15 @@
   }
 
   .faqTitle {
-    font-size: 36px !important;
-    margin-bottom: 30px !important;
+    font-size: 36px;
+    margin-bottom: 30px;
   }
 
   .faqCollapse {
     .ant-collapse-item {
       .ant-collapse-header {
-        font-size: 16px !important;
-        padding: 20px 0 !important;
+        font-size: 16px;
+        padding: 20px 0;
       }
     }
   }

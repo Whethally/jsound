@@ -1,5 +1,3 @@
-/* Gallery section styles migrated from hero.module.scss */
-
 .gallerySection {
   width: 100%;
 
@@ -11,13 +9,13 @@
 }
 
 .galleryTitle {
-  color: #ff1b6d !important;
+  color: #ff1b6d;
   text-align: center;
 }
 
 .gallerySubtitle {
-  font-size: 18px !important;
-  color: #666 !important;
+  font-size: 18px;
+  color: #666;
   text-align: center;
   display: block;
 }
@@ -65,7 +63,6 @@
     aspect-ratio: 4 / 3;
     height: auto;
 
-    /* Если последний элемент и нечетное количество - растянуть на всю ширину */
     &:last-child:nth-child(odd) {
       grid-column: 1 / -1;
       aspect-ratio: 9 / 3;

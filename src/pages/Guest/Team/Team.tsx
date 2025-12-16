@@ -1,115 +1,70 @@
-import { Button, Carousel, Flex, Tag, Typography } from 'antd';
+import { useMemo } from 'react';
+import { Button, Carousel, Flex, Typography, Grid } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import { useRef } from 'react';
-import type { CarouselRef } from 'antd/es/carousel';
 import styles from './Team.module.scss';
 import SectionTitle from '@/common/components/UI/SectionTitle/SectionTitle';
+import { TEAM_CONTENT, TEAM_DATA, CAROUSEL_CONFIG } from './constants';
+import { useTeam } from './hooks/useTeam';
+import { TeamCard } from './TeamCard';
 
-const { Title, Text } = Typography;
-
-// Команда (карусель карточек преподавателей с подробной информацией)
-const teamData = [
-  {
-    name: 'Моисеев Антон Сергеевич',
-    roles: ['Гитара', 'Электрогитара'],
-    img: '/Team/Moiseev.png',
-    fullName: 'Моисеев Антон Сергеевич'
-  },
-  {
-    name: 'Бакирова Майя Раисовна',
-    roles: ['Вокал', 'Синтезатор'],
-    img: '/Team/Bakirova.png',
-    fullName: 'Бакирова Майя Раисовна'
-  },
-  {
-    name: 'Садыкова Ильмира Рашитовна',
-    roles: ['Вокал'],
-    img: '/Team/Sadikova.png',
-    fullName: 'Садыкова Ильмира Рашитовна'
-  },
-  {
-    name: 'Шарипов Азамат Ильдарович',
-    roles: ['Гитара', 'Электрогитара'],
-    img: '/Team/Sharipov.png',
-    fullName: 'Шарипов Азамат Ильдарович'
-  }
-];
+const { Text } = Typography;
 
 const Team = () => {
-  const carouselRef = useRef<CarouselRef>(null);
+  const screens = Grid.useBreakpoint();
+  const isMobile = !screens.md;
+  const { carouselRef, handlePrev, handleNext } = useTeam();
 
-  const handlePrev = () => {
-    carouselRef.current?.prev();
-  };
-
-  const handleNext = () => {
-    carouselRef.current?.next();
-  };
+  const carouselSettings = useMemo(
+    () => ({
+      dots: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      draggable: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: CAROUSEL_CONFIG.desktop.breakpoint,
+          settings: {
+            slidesToShow: CAROUSEL_CONFIG.tablet.slidesToShow
+          }
+        },
+        {
+          breakpoint: CAROUSEL_CONFIG.tablet.breakpoint,
+          settings: {
+            slidesToShow: CAROUSEL_CONFIG.mobile.slidesToShow
+          }
+        },
+        {
+          breakpoint: CAROUSEL_CONFIG.mobile.breakpoint,
+          settings: {
+            slidesToShow: CAROUSEL_CONFIG.small.slidesToShow
+          }
+        }
+      ]
+    }),
+    []
+  );
 
   return (
     <Flex vertical className={styles.teamSection}>
       <Flex className={styles.teamHeader}>
         <Flex align='center' justify='space-between' className={styles.teamTitleContainer}>
           <Flex vertical gap={10}>
-            <SectionTitle variant='light'>Наша супер команда</SectionTitle>
-            <Text className={styles.teamSubtitle}>Все на вес золота, большие молодцы, отличные профессионалы!</Text>
+            <SectionTitle variant='light'>{TEAM_CONTENT.title}</SectionTitle>
+            <Text className={styles.teamSubtitle}>{TEAM_CONTENT.subtitle}</Text>
           </Flex>
-          <Flex gap={12} className={styles.teamNavigation}>
-            <Button size='large' icon={<LeftOutlined />} onClick={handlePrev} aria-label='Предыдущий' className={styles.navButton} />
-            <Button size='large' icon={<RightOutlined />} onClick={handleNext} aria-label='Следующий' className={styles.navButton} />
-          </Flex>
+          {!isMobile && (
+            <Flex gap={12} className={styles.teamNavigation}>
+              <Button size='large' icon={<LeftOutlined />} onClick={handlePrev} aria-label='Предыдущий' className={styles.navButton} />
+              <Button size='large' icon={<RightOutlined />} onClick={handleNext} aria-label='Следующий' className={styles.navButton} />
+            </Flex>
+          )}
         </Flex>
       </Flex>
 
-      <Carousel
-        ref={carouselRef}
-        dots={false}
-        slidesToShow={4}
-        slidesToScroll={1}
-        draggable
-        arrows={false}
-        responsive={[
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]}
-        className={styles.teamCarousel}
-      >
-        {teamData.map((member) => (
-          <div key={member.name} className={styles.teamSlide}>
-            <div className={styles.teamCard}>
-              <div className={styles.teamImageContainer}>
-                <img src={member.img} alt={member.name} className={styles.teamImage} />
-                <div className={styles.teamOverlay}>
-                  <Title level={4} className={styles.memberName}>
-                    {member.fullName}
-                  </Title>
-                  <Flex wrap className={styles.memberRoles}>
-                    {member.roles.map((role) => (
-                      <Tag key={role} className={styles.roleTag}>
-                        {role}
-                      </Tag>
-                    ))}
-                  </Flex>
-                </div>
-              </div>
-            </div>
-          </div>
+      <Carousel ref={carouselRef} {...carouselSettings} className={styles.teamCarousel}>
+        {TEAM_DATA.map((member) => (
+          <TeamCard key={member.name} member={member} />
         ))}
       </Carousel>
     </Flex>
