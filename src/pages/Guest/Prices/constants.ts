@@ -31,10 +31,10 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'microphone',
     gradient: 'linear-gradient(140deg, #FF72AA, #FF0065)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   },
   {
@@ -43,10 +43,10 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'guitar',
     gradient: 'linear-gradient(140deg, #C0AAFF, #9000FF)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   },
   {
@@ -55,10 +55,10 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'drums',
     gradient: 'linear-gradient(140deg, #729AFF, #0022FF)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   },
   {
@@ -67,10 +67,10 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'synth',
     gradient: 'linear-gradient(140deg, #A1F4AD, #53EA0E)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   },
   {
@@ -79,10 +79,10 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'accompaniment',
     gradient: 'linear-gradient(140deg, #72FFE3, #00BBFF)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   },
   {
@@ -91,15 +91,15 @@ export const DIRECTIONS_DATA: DirectionData[] = [
     icon: 'eguitar',
     gradient: 'linear-gradient(140deg, #FFE372, #FF8000)',
     packages: [
-      { pack: 'Разовое занятие', individual: '1300₽', group: '700₽' },
-      { pack: '8 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '16 занятий', individual: '1300₽', group: '700₽' },
-      { pack: '32 занятия', individual: '1300₽', group: '700₽' }
+      { pack: 'Разовое занятие', individual: 'от 1600₽', group: 'от 1000₽' },
+      { pack: '8 занятий', individual: 'от 11200₽', group: 'от 6800₽' },
+      { pack: '16 занятий', individual: 'от 20000₽', group: 'от 12800₽' },
+      { pack: '32 занятия', individual: 'от 33600₽', group: 'от 20800₽' }
     ]
   }
 ] as const;
 
 export const SLIDER_CONFIG = {
-  cardWidth: 320,
+  cardWidth: 420,
   defaultDirection: 'vocal'
 } as const;
